@@ -2,12 +2,52 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { FaArrowRight, FaPlay } from 'react-icons/fa'
 
 const Hero = () => {
+  const [fits, setFits] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
   const [currentSlide, setCurrentSlide] = useState(0)
-  
+
+  // Fixed particle positions - no Math.random
+  const particlePositions = [
+    { left: '10%', top: '20%', duration: '2.5s', delay: '0.1s' },
+    { left: '30%', top: '50%', duration: '3s', delay: '0.3s' },
+    { left: '50%', top: '10%', duration: '2.8s', delay: '0.5s' },
+    { left: '70%', top: '80%', duration: '3.2s', delay: '0.2s' },
+    { left: '90%', top: '40%', duration: '2.7s', delay: '0.4s' },
+    { left: '15%', top: '70%', duration: '3.5s', delay: '0.6s' },
+    { left: '85%', top: '15%', duration: '2.3s', delay: '0.7s' },
+    { left: '40%', top: '90%', duration: '3.8s', delay: '0.8s' },
+    { left: '60%', top: '30%', duration: '2.9s', delay: '0.9s' },
+    { left: '25%', top: '40%', duration: '3.1s', delay: '1.0s' },
+    { left: '75%', top: '60%', duration: '2.9s', delay: '1.1s' },
+    { left: '35%', top: '25%', duration: '3.4s', delay: '1.2s' },
+    { left: '65%', top: '85%', duration: '2.4s', delay: '1.3s' },
+    { left: '5%', top: '55%', duration: '3.6s', delay: '1.4s' },
+    { left: '95%', top: '75%', duration: '2.6s', delay: '1.5s' },
+  ]
+
+  const fetchFits = async () => {
+    try {
+      setIsLoading(true)
+      const response = await fetch('/api/cart')
+      if (!response.ok) {
+        throw new Error('Failed to fetch data')
+      }
+      const data = await response.json()
+      setFits(data)
+    } catch (error) {
+      console.error('Error fetching fits:', error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchFits()
+  }, [])
+
   const heroSlides = [
     {
       title: "Heritage",
@@ -54,6 +94,8 @@ const Hero = () => {
     setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
   }
 
+  const cartItemCount = fits.length || 0
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Premium Background Layers */}
@@ -69,17 +111,17 @@ const Hero = () => {
           }}></div>
         </div>
         
-        {/* Animated yellow-700 particles */}
+        {/* Animated yellow-700 particles - FIXED VERSION (no Math.random) */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(15)].map((_, i) => (
+          {particlePositions.map((pos, i) => (
             <div
               key={i}
               className="absolute w-[1px] h-[1px] bg-yellow-700 rounded-full"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animation: `twinkle ${2 + Math.random() * 3}s infinite ease-in-out`,
-                animationDelay: `${Math.random() * 2}s`,
+                left: pos.left,
+                top: pos.top,
+                animation: `twinkle ${pos.duration} infinite ease-in-out`,
+                animationDelay: pos.delay,
                 boxShadow: '0 0 8px 2px rgba(212, 175, 55, 0.5)'
               }}
             ></div>
@@ -342,8 +384,10 @@ const Hero = () => {
               <div className="text-white/60 text-sm tracking-wider">CLIENT SATISFACTION</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-cormorant font-light text-yellow-700 mb-1">24</div>
-              <div className="text-white/60 text-sm tracking-wider">AWARDS WON</div>
+              <div className="text-2xl font-cormorant font-light text-yellow-700 mb-1">
+                {isLoading ? '...' : cartItemCount}
+              </div>
+              <div className="text-white/60 text-sm tracking-wider">CART ITEMS</div>
             </div>
           </div>
         </div>

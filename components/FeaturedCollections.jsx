@@ -24,7 +24,7 @@ const FeaturedCollections = () => {
     },
     {
       id: 2,
-      name: 'From This Side Heritage',
+      name: 'From This Side Masters',
       description: 'Luxury apparel featuring hand-embroidered traditional West African symbols',
       price: 720,
       originalPrice: 950,
