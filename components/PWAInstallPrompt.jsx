@@ -70,7 +70,7 @@ const PWAInstallPrompt = () => {
           
           <div className="flex-1">
             <h3 className="font-semibold text-african-brown mb-1">
-              Install Adinkra App
+              Install From This Side App
             </h3>
             <p className="text-sm text-african-brown/70 mb-3">
               Get the best shopping experience with our app

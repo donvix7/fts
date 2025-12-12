@@ -23,7 +23,7 @@ const Hero = () => {
       subtitle: "Excellence",
       description: "Handcrafted pieces by master artisans, blending centuries-old techniques with modern design.",
       price: "$ 1,950",
-      productName: "Adinkra Embroidered Cape",
+      productName: "From This Side Embroidered Cape",
       gradient: "from-black via-earth-brown to-kente-red",
       accentColor: "kente-red"
     },

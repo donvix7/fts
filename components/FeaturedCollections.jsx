@@ -24,7 +24,7 @@ const FeaturedCollections = () => {
     },
     {
       id: 2,
-      name: 'Adinkra Heritage',
+      name: 'From This Side Heritage',
       description: 'Luxury apparel featuring hand-embroidered traditional West African symbols',
       price: 720,
       originalPrice: 950,

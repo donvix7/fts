@@ -22,8 +22,8 @@ const PRODUCTS_DATA = [
   },
   {
     id: 2,
-    name: 'Adinkra Symbol Tailored Blazer',
-    description: 'Italian wool blazer with hand-embroidered Adinkra symbols',
+    name: 'From This Side Symbol Tailored Blazer',
+    description: 'Italian wool blazer with hand-embroidered From This Side symbols',
     price: 1420,
     category: 'Formal Wear',
     imageColor: 'from-black/90 to-earth-brown/90',

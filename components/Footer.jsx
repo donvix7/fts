@@ -23,7 +23,7 @@ const Footer = () => {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="text-4xl font-cormorant font-bold text-cream inline-block mb-6">
-              Adinkra
+              From This Side
               <span className="text-yellow-700 text-3xl">®</span>
             </Link>
             <p className="text-cream/70 mb-8 max-w-md">
@@ -72,7 +72,7 @@ const Footer = () => {
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-cream/60 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Adinkra Luxury Fashion. All rights reserved.
+            © {new Date().getFullYear()} From This Side Luxury Fashion. All rights reserved.
           </div>
           
           <div className="flex items-center space-x-6">

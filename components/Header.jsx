@@ -168,7 +168,7 @@ const Header = () => {
             <Link 
               href="/" 
               className="group relative focus:outline-none focus:ring-2 focus:ring-yellow-700/30 rounded"
-              aria-label="Adinkra Home"
+              aria-label="From This Side Home"
             >
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-br from-yellow-700 to-earth-brown 
@@ -178,7 +178,7 @@ const Header = () => {
                 <div className="flex flex-col">
                   <span className="text-2xl font-cormorant font-bold text-black 
                                  tracking-tight leading-none">
-                    Adinkra
+                    From This Side
                   </span>
                   <span className="text-[10px] text-black/60 tracking-widest 
                                   font-light">

@@ -2,13 +2,13 @@ import './globals.css'
 import { Metadata } from 'next'
 
 export const metadata = {
-  title: 'Adinkra | Premium African Fashion',
+  title: 'From This Side | Premium African Fashion',
   description: 'Luxury African-inspired fashion brand celebrating heritage and contemporary design',
   manifest: '/manifest.json',
   themeColor: '#4A2C2A',
   appleWebApp: {
     capable: true,
-    title: 'Adinkra',
+    title: 'From This Side',
     statusBarStyle: 'black-translucent',
   },
   viewport: {
@@ -33,10 +33,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="application-name" content="Adinkra" />
+        <meta name="application-name" content="From This Side" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Adinkra" />
+        <meta name="apple-mobile-web-app-title" content="From This Side" />
         <meta name="description" content="Premium African Fashion" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />

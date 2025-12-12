@@ -5,7 +5,7 @@ self.addEventListener('install', (event) => {
   console.log('Service Worker: Installing...')
   
   event.waitUntil(
-    caches.open('adinkra-v1').then((cache) => {
+    caches.open('From This Side-v1').then((cache) => {
       console.log('Service Worker: Caching App Shell...')
       return cache.addAll([
         '/',
@@ -26,7 +26,7 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
-          if (cacheName !== 'adinkra-v1') {
+          if (cacheName !== 'From This Side-v1') {
             console.log('Service Worker: Clearing Old Cache', cacheName)
             return caches.delete(cacheName)
           }
@@ -42,7 +42,7 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {
         return cachedResponse || fetch(event.request).then((response) => {
-          return caches.open('adinkra-v1').then((cache) => {
+          return caches.open('From This Side-v1').then((cache) => {
             cache.put(event.request, response.clone())
             return response
           })
@@ -73,7 +73,7 @@ self.addEventListener('fetch', (event) => {
 // Handle push notifications
 self.addEventListener('push', (event) => {
   const data = event.data?.json() || {
-    title: 'Adinkra',
+    title: 'From This Side',
     body: 'New collection available!',
     icon: '/icons/icon-192x192.png'
   }
@@ -84,7 +84,7 @@ self.addEventListener('push', (event) => {
       icon: data.icon,
       badge: '/icons/badge.png',
       vibrate: [200, 100, 200],
-      tag: 'adinkra-notification',
+      tag: 'From This Side-notification',
       data: data.url
     })
   )
