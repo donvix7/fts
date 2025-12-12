@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "From This Side | Premium Fashion",
   "short_name": "From This Side",
   "description": "Luxury urban-inspired fashion brand celebrating heritage and contemporary design",
@@ -7,94 +8,80 @@
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "id": "/",
+  "dir": "ltr",
+  "lang": "en-US",
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
       "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-96x96.png",
       "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-128x128.png",
       "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-144x144.png",
       "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-152x152.png",
       "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-384x384.png",
       "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
-  "screenshots": [
-    {
-      "src": "/screenshots/home-desktop.png",
-      "sizes": "1920x1080",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/screenshots/home-mobile.png",
-      "sizes": "750x1334",
-      "type": "image/png",
-      "form_factor": "narrow"
-    }
-  ],
+  "screenshots": [],
   "categories": ["fashion", "shopping", "lifestyle"],
   "shortcuts": [
     {
       "name": "New Collection",
       "short_name": "Collection",
       "description": "Browse our latest collection",
-      "url": "/products?filter=new",
-      "icons": [{ "src": "/icons/new-192x192.png", "sizes": "192x192" }]
+      "url": "/products?filter=new&source=pwa"
     },
     {
       "name": "Limited Edition",
       "short_name": "Limited",
       "description": "Exclusive limited edition pieces",
-      "url": "/products?filter=limited",
-      "icons": [{ "src": "/icons/limited-192x192.png", "sizes": "192x192" }]
+      "url": "/products?filter=limited&source=pwa"
     },
     {
       "name": "Cart",
       "short_name": "Cart",
       "description": "View your shopping cart",
-      "url": "/cart",
-      "icons": [{ "src": "/icons/cart-192x192.png", "sizes": "192x192" }]
+      "url": "/cart?source=pwa"
     }
-  ]
+  ],
+  "prefer_related_applications": false
 }
